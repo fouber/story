@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+- '0.10'
+env:
+  global:
+  - PATH: node_modules/.bin/:$PATH
+  - REPO_SLUG: fouber/story
+install:
+- npm install fis
+- fis -v
+script:
+- fis release -Doumpd ../output
+- git checkout gh-pages
+- cp -fr ../output/* .
+- git config user.email "travis@travis-ci.org"
+- git config user.name "travis-ci"
+- git add -A
+- git commit -m "[ci skip] publish website"
+- git push -fq origin gh-pages > /dev/null
+cache:
+  directories:
+  - node_modules
+branches:
+  only:
+  - master
