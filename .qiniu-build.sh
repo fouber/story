@@ -1,4 +1,4 @@
-output=~/temp/story-output
-rm -rf ${output}
+output=${HOME}/temp/story-output
 fis release -Doumpd ${output}
-qrsync ~/.story-conf.json
+qrsync ${HOME}/.story-conf.json
+rm -rf ${output}
