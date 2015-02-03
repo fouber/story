@@ -5,19 +5,15 @@ env:
   global:
   - PATH: node_modules/.bin/:$PATH
   - REPO_SLUG: fouber/story
+  - secure: XvpXpXL1aBOX/3ibEwvkBYTdXDF0DqVqKx0sPKf8rBC7aftjiEJXgFCebbZNGZEG8xN9TfI5TQYWDQ7WH5EWpBayfOIl/qdbRwFQJCr3n0fZNWIEoX44F7kQQAOxWTkmhd5D3I8lOXDUrU88pU1VtKHveVWZqMQNW4BO8kZu/3U=
 install:
 - npm install fis
 - npm install fis-optimizer-html-minifier
 - fis -v
 script:
-- fis release -Doumpd ../output
-- git checkout gh-pages
-- cp -fr ../output/* .
-- git config user.email "travis@travis-ci.org"
-- git config user.name "travis-ci"
-- git add -A
-- git commit -m "[ci skip] publish website"
-- git push -fq origin gh-pages > /dev/null
+- fis release -Doumpd output
+after_success:
+- sh .build.sh
 cache:
   directories:
   - node_modules
