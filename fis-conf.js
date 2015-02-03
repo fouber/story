@@ -6,6 +6,10 @@ fis.config.set('roadmap.path', [
         release: false
     },
     {
+        reg: '**.md',
+        release: false
+    },
+    {
         reg: '**',
         url: '/story$&'
     }
