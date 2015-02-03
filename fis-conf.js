@@ -1,5 +1,5 @@
+fis.config.set('project.exclude', 'node_modules/**');
 fis.config.set('modules.optimizer.html', 'html-minifier');
-
 fis.config.set('roadmap.path', [
     {
         reg: 'map.json',
