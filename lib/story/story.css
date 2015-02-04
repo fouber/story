@@ -52,14 +52,46 @@ body {
     transform: translateY(-100%);
 }
 
-.swiper-slide img {
+.swiper-slide .center {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
     position: absolute;
+}
+
+.swiper-slide .shadow {
     box-shadow: 0 0.1em 1em rgba(0, 0, 0, 1);
+}
+
+.share .qrcode {
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.share .slogan {
+    top: 0;
+    right: 0;
+    width: 10rem;
+    height: 10rem;
+    font-size: 0.8rem;
+    position: absolute;
+    text-align: center;
+}
+
+.slogan strong {
+    display: block;
+    padding: 0.5rem 0.5em;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    text-shadow: 0 0.05em 0.1em rgba(0, 0, 0, 0.3);
+    border-radius: 0.3em;
+    background: #ff0;
+    box-shadow: 0 0.05em 0.1em rgba(0, 0, 0, 0.4);
 }
 
 .swiper-slide section {
@@ -103,13 +135,47 @@ body {
 }
 
 @media screen and (orientation: portrait) {
-    .swiper-slide img {
+    .share {
+        width: 10rem;
+        height: 22rem;
+    }
+
+    .share .slogan {
+        border-top: 1px solid #ccc;
+        padding-top: 0.8rem;
+        top: auto;
+        bottom: 0;
+        text-align: center;
+    }
+    .swiper-slide img.pic {
         width: 100%;
     }
 }
 
 @media screen and (orientation: landscape) {
-    .swiper-slide img {
+    .share {
+        width: 22rem;
+        height: 10rem;
+    }
+
+    .share .slogan {
+        border-left: 1px solid #ccc;
+        padding-left: 0.7rem;
+
+        /* Safari, Opera, and Chrome */
+        display:-webkit-box;
+        -webkit-box-pack:center;
+        -webkit-box-align:center;
+        -webkit-box-orient: vertical;
+
+        /* W3C */
+        display:box;
+        box-pack:center;
+        box-align:center;
+        box-orient: vertical;
+    }
+
+    .swiper-slide img.pic {
         height: 100%;
     }
     .page-content {
