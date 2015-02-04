@@ -1,0 +1,267 @@
+/*
+ * Swiper 2.7.5
+ * Mobile touch slider and framework with hardware accelerated transitions
+ *
+ * http://www.idangero.us/sliders/swiper/
+ *
+ * Copyright 2010-2015, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us/
+ *
+ * Licensed under GPL & MIT
+ *
+ * Released on: January 4, 2015
+*/
+/* ===============================================================
+Basic Swiper Styles 
+================================================================*/
+.swiper-container {
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+	/* Fix of Webkit flickering */
+	z-index:1;
+}
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	-webkit-transition-property:-webkit-transform, left, top;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+	
+	-moz-transition-property:-moz-transform, left, top;
+	-moz-transition-duration:0s;
+	-moz-transform:translate3d(0px,0,0);
+	-moz-transition-timing-function:ease;
+	
+	-o-transition-property:-o-transform, left, top;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	-o-transform:translate(0px,0px);
+	
+	-ms-transition-property:-ms-transform, left, top;
+	-ms-transition-duration:0s;
+	-ms-transform:translate3d(0px,0,0);
+	-ms-transition-timing-function:ease;
+	
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.swiper-free-mode > .swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	-ms-transition-timing-function: ease-out;
+	-o-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+.swiper-slide {
+	float: left;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+/* ===============================================================
+Your custom styles, here you need to specify container's and slide's
+sizes, pagination, etc.
+================================================================*/
+.swiper-container {
+	/* Specify Swiper's Size: */
+
+	/*width:200px;
+	height: 100px;*/
+}
+.swiper-slide {
+	/* Specify Slides's Size: */
+	
+	/*width: 100%;
+	height: 100%;*/
+}
+.swiper-slide-active {
+	/* Specific active slide styling: */
+	
+}
+.swiper-slide-visible {
+	/* Specific visible slide styling: */	
+
+}
+/* ===============================================================
+Pagination Styles
+================================================================*/
+.swiper-pagination-switch {
+	/* Stylize pagination button: */	
+
+}
+.swiper-active-switch {
+	/* Specific active button style: */	
+	
+}
+.swiper-visible-switch {
+	/* Specific visible button style: */	
+	
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #333;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1rem;
+}
+
+.swiper-container,
+.swiper-wrapper,
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+.swiper-slide {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.swiper-slide.cover {
+    background: #fff;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.swiper-slide.cover h1 {
+    top: 50%;
+    font-size: 2.5rem;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 0.05em 0.1em rgba(0, 0, 0, 0.3);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.swiper-slide img {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    box-shadow: 0 0.1em 1em rgba(0, 0, 0, 1);
+}
+
+.swiper-slide section {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    position: absolute;
+    word-break: normal;
+    white-space: normal;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.page-count {
+    top: 0;
+    left: 0;
+    padding: 0.5% 1%;
+    font-size: 1.2rem;
+    position: absolute;
+}
+
+.page-count:after {
+    top: 0;
+    width: 1px;
+    content: '';
+    height: 100%;
+    display: block;
+    position: absolute;
+    border-right: 1px solid #fff;
+    -webkit-transform: rotate(45deg) translate(0.6em, -0.1em);
+    transform: rotate(45deg) translate(0.6em, -0.1em);
+}
+
+.page-content {
+    padding: 3% 2%;
+    text-indent: 2em;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.5em;
+    text-shadow: 0 0.08em 0.1em rgba(0, 0, 0, 1);
+}
+
+@media screen and (orientation: portrait) {
+    .swiper-slide img {
+        width: 100%;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .swiper-slide img {
+        height: 100%;
+    }
+    .page-content {
+        padding: 1% 2%;
+    }
+}
+
+@media screen and (min-width: 568px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 968px) {
+    html {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 1168px) {
+    html {
+        font-size: 30px;
+    }
+}
