@@ -93,6 +93,73 @@ body {
     background: #ff0;
     box-shadow: 0 0.05em 0.1em rgba(0, 0, 0, 0.4);
 }
+.go-right,
+.go-left {
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -1.25rem;
+    color: #999;
+}
+.go-right {
+    right: 0.5em;
+    animation: shake-right 2s infinite ease-out;
+    -webkit-animation: shake-right 2s infinite ease-out;	/* Safari 和 Chrome */
+}
+
+.go-left {
+    left: 0.5em;
+    animation: shake-left 2s infinite ease-out;
+    -webkit-animation: shake-left 2s infinite ease-out;	/* Safari 和 Chrome */
+}
+
+@keyframes shake-right {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(30%, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@-webkit-keyframes shake-right  {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(30%, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes shake-left {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-30%, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@-webkit-keyframes shake-left  {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-30%, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
 
 .swiper-slide section {
     left: 0;
