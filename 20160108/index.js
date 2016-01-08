@@ -1,6 +1,6 @@
 (function(){
     story('.swiper-container', {
-        title: '农夫与蛇',
+        title: '戴盆姑娘',
         pages: [
             {
                 img: __uri('img/01.jpg'),
